@@ -2,6 +2,7 @@ import "./globals.css";
 import { Inter } from "next/font/google";
 import { EXAMPLE_PATH, CMS_NAME } from "@/lib/constants";
 import { Analytics } from '@vercel/analytics/next';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 export const metadata = {
   title: `Next.js and ${CMS_NAME} Example`,
   description: `This is a blog built with Next.js and ${CMS_NAME}.`,
@@ -54,6 +55,7 @@ export default function RootLayout({
           <Footer />
         </section>
         <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
