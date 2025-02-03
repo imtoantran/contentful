@@ -16,21 +16,7 @@ function Intro() {
         Blog.
       </h1>
       <h2 className="text-center md:text-left text-lg mt-5 md:pl-8">
-        A statically generated blog example using{" "}
-        <a
-          href="https://nextjs.org/"
-          className="underline hover:text-success duration-200 transition-colors"
-        >
-          Next.js
-        </a>{" "}
-        and{" "}
-        <a
-          href={CMS_URL}
-          className="underline hover:text-success duration-200 transition-colors"
-        >
-          {CMS_NAME}
-        </a>
-        .
+       
       </h2>
     </section>
   );
@@ -79,6 +65,8 @@ function HeroPost({
 export default async function Page() {
   const { isEnabled } = draftMode();
   const allPosts = await getAllPosts(isEnabled);
+  if (allPosts == undefined)
+    return (<> </>);
   const heroPost = allPosts[0];
   const morePosts = allPosts.slice(1);
 
